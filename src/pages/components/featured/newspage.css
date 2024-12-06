@@ -1,0 +1,69 @@
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+        grid-gap: 20px;
+        justify-items: center;
+    }
+
+    /* .card {
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        padding: 20px;
+        width: 300px;
+        margin: 10px;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif
+
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif
+
+    }
+
+    .card p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #bbb;
+    } */
+    .featured-news-container {
+        text-align: start;
+    }
+
+    .rainbow-text {
+        margin-left:60px;
+
+        font-size: 3rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+        background-size: 400%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: rainbow 10s ease-in-out infinite;
+        font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif
+
+    }
+
+    /* Keyframes for the rainbow animation */
+    @keyframes rainbow {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @media (max-width: 768px) {
+        .cards-container{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* 3 cards per row */
+            grid-gap: 20px;
+            justify-items: center;
+        }
+    }
