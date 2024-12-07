@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await axios.post("https://jobscanner-backend-6p9d.vercel.app/", {
+      await axios.post("https://jobscanner-backend-vkr7.vercel.app/", {
         email,
         password
       })
