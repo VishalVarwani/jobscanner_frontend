@@ -1,0 +1,391 @@
+:root {
+    --primary-color: rgb(17 17 17);
+    --secondary-color: #171717;
+    --border-color: #ddd;
+    --heading-text-color: #ffffff;
+    --input-bg-color: #e0e4e8;
+    --button-bg-color: #333;
+    --button-hover-bg-color: #555;
+    --button-text-color: #ffffff;
+    
+    --text-color-dark: #333;
+    --text-color-light: #666;
+    --border-color: #ddd;
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: rgba(0, 0, 0, 0.2);
+  }
+  
+  .JobResults {
+  
+  
+    text-align: center;
+  
+    align-items: center;
+  }
+  
+  .page-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: rgb(17 17 17);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px var(--box-shadow-light);
+    height: 60vh;
+    margin-top: 100px;
+  }
+  
+  .sidebar h3 {
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+  .filter-option {
+    margin-bottom: 15px;
+  }
+  
+  .filter-option label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .filter-option select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  }
+  
+  .apply-filters {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .apply-filters:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* border: 1px solid white;
+    border-radius: 5px; */
+  }
+  
+  .job-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+    
+  }
+  .job-item.expanded-job {
+    grid-column: span 1;
+    max-height: 800px; /* Expanded height */
+    opacity: 1; /* Fully visible when expanded */
+    transform: translateY(20px); /* Slide down by 20px */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for expanded card */  }
+  
+  .job-item {
+    border-radius: 8px;
+    background-color: rgb(17 17 17);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px;
+    transition: 
+      max-height 5s ease, /* Slower max-height change */
+      background-color 5s ease, /* Slightly slower background color transition */
+      box-shadow 0.8s ease, /* Slower box shadow change */
+      transform 5s ease; /* Adding transform transition */
+    overflow: hidden;
+    opacity: 0.8; /* Slight transparency when collapsed */
+    transform: translateY(6); /* No movement when collapsed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-item:hover {
+    box-shadow: 0 4px 8px var(--box-shadow-dark);
+  }
+  .job-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit the description to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .job-description.expanded {
+    -webkit-line-clamp: unset; /* Allow the description to expand */
+  }
+  
+  .read-more-btn {
+    background: none;
+    color: #0073e6;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+  }
+  
+  
+  .job-header {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    margin-bottom: 10px;
+    text-align: center; /* Centers text inside the container */
+  }
+  
+  .job-item h2 {
+    font-size: 20px;
+    color: white;
+    text-align: center; /* Ensures the title itself is centered */
+    margin: 0; /* Remove default margin if needed */
+  }
+  .company-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  .job-item h2 {
+    font-size: 20px;
+    color: white
+  }
+  
+  .job-item p {
+    font-size: 16px;
+    color:  #A9A9A9;
+    margin: 5px 0;
+    text-align: start;
+    font-weight: 700;
+  }
+  .source {
+    position: absolute;
+    background-color: #333;      /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: auto;
+  }
+  .source:hover{
+    background-color: #333;
+  
+  }
+  .apply-link {
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .apply-link:hover {
+    text-decoration: underline;
+  }
+  
+  
+  
+  .job-details {
+    margin-top: 10px;
+  }
+  
+  .toggle-details {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  .toggle-details:hover {
+    text-decoration: underline;
+  }
+  
+  .details-content {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .job-details.open .details-content {
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-container {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .sidebar {
+      margin-bottom: 20px;
+      padding: 0px;
+      height: 50vh;
+    width: 100%;
+    }
+  
+    .job-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .filter-option select {
+        width: 50%;
+      
+      }
+      .apply-filters {
+      
+        width: 50%;
+      }
+      .Backtosearch {
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 20px;
+        width: 65%;
+        display: flex;
+        justify-content: center;
+    
+      }
+  }
+  
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 25px;
+    background-color: #ddd; /* Default background color */
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  /* Change background color on hover */
+  .options:hover {
+    background-color: #0073b1 !important;
+    color: white;
+  }
+  
+  /* Active button styling */
+  .options.active-button {
+    background-color: black; /* Color when button is active */
+    color: #fff; /* White text color for active button */
+  }
+  input::placeholder{
+    color:"white"
+  }
+  .optionbutton {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  }
+  
+  
+  
+  .options.active-button {
+  background-color: #0073b1; /* LinkedIn blue */
+  color: white;
+  }
+  
+  
+  
+
+  
+  .job-item:hover {
+  transform: translateY(-5px);
+  }
+  
+  .job-header {
+  background-color: #0d3f75 !important; /* LinkedIn blue */
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  }
+  .job-actions {
+    display: flex;
+    flex-direction: column; /* Stack source and Apply Now vertically */
+    align-items: flex-end; /* Align to the right */
+    gap: 5px; /* Add spacing between links */
+  }
+  
+  .job-actions a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .job-actions a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  .apply-link {
+  color: #0073b1; /* LinkedIn blue */
+  text-decoration: none;
+  font-weight: bold;
+  }
+  
+  .apply-link:hover {
+  text-decoration: underline;
+  } 
+  
+  .apply-link {
+    position: absolute;
+    margin-top: 47px;
+    display: inline-block;
+    background-color: #0073b1; /* LinkedIn blue */
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 0px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+  }
+  
+  .apply-link:hover {
+    background-color: #005b8f; /* Darker blue for hover effect */
+    text-decoration: none; /* Keeps it clean without underline */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly bigger shadow on hover */
+  }
+  
+  .apply-link:active {
+    background-color: #004470; /* Even darker blue when clicked */
+    transform: translateY(0); /* Reset position on click */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Smaller shadow on active */
+  }
+  
