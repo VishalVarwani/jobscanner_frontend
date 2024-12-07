@@ -17,7 +17,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await axios.post(`${import.meta.env.VITE_REACT_APP_AUTH_BASEURL}/signup`, {
+      await axios.post("https://jobscanner-backend-6p9d.vercel.app/signup", {
         email,
         password
       })
