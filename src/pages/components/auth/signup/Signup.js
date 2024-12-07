@@ -20,7 +20,7 @@ const Signup = () => {
       await axios.post("https://jobscanner-backend-6p9d.vercel.app/signup", {
         email,
         password
-      })
+      } { withCredentials: true })
       
         .then(res => {
           if (res.data === "exist") {
