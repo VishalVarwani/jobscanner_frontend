@@ -17,7 +17,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-     await axios.post("https://jobscanner-backend-6p9d.vercel.app/signup", {
+     await axios.post("https://jobscanner-backend-vkr7.vercel.app/signup", {
       email,
       password
 },   { withCredentials: true })
