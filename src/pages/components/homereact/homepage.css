@@ -1,0 +1,100 @@
+/* 
+.Homepage {
+  background-color: rgb(41, 41, 41)
+
+} */
+
+.Banner {
+  margin: 40px 0; /* Add some vertical spacing */
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between image and texts */
+  text-decoration: none; /* Removes link underline */
+}
+.abouttitle{
+  text-align: center;
+  padding: 40px;
+  font-size: 50.688px;
+  line-height: 55.7568px;
+  letter-spacing: -0.96px;
+  color: #ffffff;
+  font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif
+}
+
+.banner-text-left,
+.banner-text-right {
+  font-size: 15.5263px !important;
+  line-height: 22.2316px;
+  letter-spacing: 0.185263px;
+  background: linear-gradient(90deg, #a1a1a1, #ffffff, #a1a1a1); /* Gradient effect */
+  background-size: 200% 100%; /* Ensure the gradient spans a wider area for animation */
+  -webkit-background-clip: text;
+
+  color: transparent; /* Make text color transparent to show gradient background */
+  background-repeat: no-repeat;
+  
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Centers the text */
+
+  animation: typing 8s steps(60, end) infinite, blink-caret 0.75s step-end infinite;
+  font-family: __monument_mono_a40341, __monument_mono_Fallback_a40341;
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
+/* Typing animation */
+@keyframes typing {
+  0% {
+      width: 0;
+  }
+  50% {
+      width: 120%;
+  }
+  100% {
+      width: 0;
+  }
+}
+
+/* Cursor blinking animation */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+  /* Adjust the banner text and image for mobile */
+  @media (max-width: 768px) {
+    .banner-content {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center align text and image */
+    }
+
+    .banner-text-left, .banner-text-right {
+      font-size: 12px !important; /* Reduce font size for smaller screens */
+      text-align: center; /* Center-align text on mobile */
+      white-space: normal; /* Allow text to wrap on smaller screens */
+      animation: none; /* Optionally disable the animation on very small screens */
+    }
+
+   
+    
+  }
+
+  /* For extra small screens (phones) */
+  @media (max-width: 480px) {
+    .banner-text-left, .banner-text-right {
+      font-size: 10px !important; /* Further reduce font size for smaller phones */
+      line-height: 18px;
+    }
+
+    .banner-image {
+      width: 70%; /* Make image smaller for very small screens */
+    }
+  }

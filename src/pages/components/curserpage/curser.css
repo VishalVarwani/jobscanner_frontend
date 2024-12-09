@@ -1,0 +1,37 @@
+/* Ensure the container takes up the entire screen */
+.full-screen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Ensure the mouse can still interact with other elements */
+    overflow: hidden;
+    z-index: 9999; /* Ensure it's above all other content */
+  }
+  
+  /* Style for each trail dot */
+  .trail {
+    position: absolute;
+    width: 50px; /* Adjust size of the trail dot */
+    height: 50px;
+    background: rgba(31, 35, 244, 0.522) 100%;
+        
+       border-radius: 400%;
+    pointer-events: none; 
+    animation: fadeOut 1s forwards;
+    filter: blur(90px);
+  }
+  
+  /* Fading out animation */
+  @keyframes fadeOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  
