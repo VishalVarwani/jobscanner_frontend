@@ -10,6 +10,7 @@ import statusimg from "../../../images/status.png";
 import indeedimg from "../../../images/indeed.png"
 import { baseUrl } from '../../../../Urls';
 import Alert from '@mui/material/Alert';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -141,50 +142,17 @@ return (
         </div>
 
         <div className='main-content'>
-        <div className='optionbutton'>
-            <button
-            onClick={() => handlePlatformSwitch('indeed')}
-            disabled={jobs.length === 0}
-            className={`options  ${activePlatform === 'indeed' ? 'active-button' : ''}`}
-            >
-            View Indeed
-            </button>
-            <button
-            onClick={() => handlePlatformSwitch('linkedin')}
-            disabled={jobs.length === 0}
-            className={`options  ${activePlatform === 'linkedin' ? 'active-button' : ''}`}
-            >
-            View LinkedIn
-            </button>
-            <button
-            onClick={() => handlePlatformSwitch('stepstone')}
-            disabled={jobs.length === 0}
-            className={`options  ${activePlatform === 'stepstone' ? 'active-button' : ''}`}
-            >
-            View StepStone
-            </button>
-            <button
-            onClick={() => handlePlatformSwitch('glassdoor')}
-            disabled={jobs.length === 0}
-            className={`options  ${activePlatform === 'glassdoor' ? 'active-button' : ''}`}
-            >
-            View Glassdoor
-            </button>
-            <button
-            onClick={() => handlePlatformSwitch('both')}
-            disabled={jobs.length === 0}
-            className={`options  ${activePlatform === 'both' ? 'active-button' : ''}`}
-            >
-            Show All
-            </button>
-            {/* <button
-            className='Backtosearch options'
-            onClick={() => navigate('/')}
-            >
-            Back to Search
-            </button> */}
-          
-        </div>
+        <div style={{gap:"25px"}} className="d-flex justify-content-center flex-wrap mb-3">
+            {['indeed', 'linkedin', 'stepstone', 'glassdoor', 'both'].map((platform) => (
+              <button style={{gap:"25px"}}
+                key={platform}
+                onClick={() => handlePlatformSwitch(platform)}
+                className={`btn ${activePlatform === platform ? 'btn-primary' : 'btn-secondary'} mx-1`}
+              >
+                {`View ${platform.charAt(0).toUpperCase() + platform.slice(1)}`}
+              </button>
+            ))}
+          </div>
 
         {jobs.length === 0 ? (
             <p>No jobs found.</p>
@@ -198,15 +166,17 @@ return (
                     className={`job-item ${isExpanded ? 'expanded-job' : ''}`} 
                 >
                   <div className="job-header">
-                  <h2>{job.JobTitle}</h2>
-<Link style={{ position: "absolute", right: 20 }}>
+                  <h2 className='jobtitle'>{job.JobTitle}</h2>
+<Link className='saveparent' style={{ position: "absolute", right: 20 }}>
     <img
+    className='savelogo'
         src={save}
         alt="Save this"
         onClick={() => handleSaveJob(job)} // Save the job when clicking on the save icon
         style={{
             cursor: "pointer",
-            paddingLeft: "10px", // Adds space from the job title
+            paddingLeft: "10px",
+           // Adds space from the job title
         }}
     />
 </Link>
@@ -228,8 +198,8 @@ return (
      </div>
                     <div style={{marginTop:"10px"}}>
 <div style={{ display: "flex", alignItems: "center" }}>
-    <img src={job.Companylogo} alt="Company Logo" style={{ marginRight: "10px" , width:"56px", height:"56px"}} />
-    <p style={{ fontSize: "17px", marginLeft: "21px", color: "whitesmoke" }}>
+    <img className="companylogo" src={job.Companylogo} alt="Company Logo"  />
+    <p className="companyname" style={{ fontSize: "14px", marginLeft: "21px", color: "whitesmoke" }}>
         {job.CompanyName}
     </p>
 </div>
@@ -237,54 +207,54 @@ return (
 {/* This is the job source link, it will be pushed to the far right */}
 
 
-<div style={{ display: "flex", alignItems: "center", gap: "30px", marginLeft: "85px" }}>
+<div className='parentcard' style={{ display: "flex", alignItems: "center", gap: "30px", marginLeft: "85px" }}>
     {job.JobLocation && (
         <div style={{ display: "flex", alignItems: "center" }}>
             <img src={locationimg} alt="Location Icon" style={{ marginRight: "5px" }} />
-            <p style={{ fontSize: "17px", margin: "0" }}>{job.JobLocation}</p>
+            <p className= 'parentfont' style={{ fontSize: "17px", margin: "0" }}>{job.JobLocation}</p>
             
         </div>
     )}
                          {job.Fulltime && (
         <div style={{ display: "flex", alignItems: "center" }}>
-            <p style={{ fontSize: "17px", margin: "0", }}>.</p>
+            <p className= 'parentfont'  style={{ fontSize: "17px", margin: "0", }}>.</p>
         </div>
     )}
     {job.Fulltime && (
         <div style={{ display: "flex", alignItems: "center" }}>
             <img src={clockimg} alt="Clock Icon" style={{ marginRight: "5px" }} />
-            <p style={{ fontSize: "17px", margin: "0", }}>Fulltime</p>
+            <p className= 'parentfont'  style={{ fontSize: "17px", margin: "0", }}>Fulltime</p>
         </div>
     )}
                          {job.JobPosted && (
         <div style={{ display: "flex", alignItems: "center" }}>
-            <p style={{ fontSize: "17px", margin: "0", }}>.</p>
+            <p className= 'parentfont'  style={{ fontSize: "17px", margin: "0", }}>.</p>
         </div>
     )}
     {job.JobPosted && (
         <div style={{ display: "flex", alignItems: "center" }}>
             <img src={calenderimg} alt="Clock Icon" style={{ marginRight: "5px" }} />
-            <p style={{ fontSize: "17px", margin: "0" }}>{job.JobPosted}</p>
+            <p className= 'parentfont'  style={{ fontSize: "17px", margin: "0" }}>{job.JobPosted}</p>
         </div>
     )}{job.Salary && (
         <div style={{ display: "flex", alignItems: "center" }}>
             <img src={calenderimg} alt="Clock Icon" style={{ marginRight: "5px" }} />
-            <p style={{ fontSize: "17px", margin: "0" }}>{job.Salary}</p>
+            <p className= 'parentfont'  style={{ fontSize: "17px", margin: "0" }}>{job.Salary}</p>
         </div>
     )}
                         {job.Status && (
         <div style={{ display: "flex", alignItems: "center" }}>
-            <p style={{ fontSize: "17px", margin: "0", }}>.</p>
+            <p className= 'parentfont'  style={{ fontSize: "17px", margin: "0", }}>.</p>
         </div>
     )}
     {job.Status && (
         <div style={{ display: "flex", alignItems: "center" }}>
             <img src={statusimg} alt="Status Icon" style={{ marginRight: "5px" }} />
-            <p style={{ fontSize: "17px", margin: "0" }}>{job.Status}</p>
-        </div>
+            <p className= 'parentfont' style={{ fontSize: "17px", margin: "0" }}>{job.Status}</p>
+        </div> 
     )}
                         </div>
-                        <p style={{marginTop:"20px"}}className={`job-description ${isExpanded ? 'expanded' : 'collapsed'}`}>{job.Description}</p>
+                        <p  style={{marginTop:"20px",}}className={`job-description ${isExpanded ? 'expanded' : 'collapsed'} parentfont` }>{job.Description}</p>
                       {/* Only show Read More button if the description is long enough */}
                       {shouldShowReadMore(job.Description) && (
                         <button style={{textDecoration:"none", color:"white", fontWeight:"700"}}

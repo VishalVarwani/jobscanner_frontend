@@ -246,7 +246,7 @@
       margin-bottom: 20px;
       padding: 0px;
       height: 50vh;
-    width: 100%;
+    width: 94%;
     }
   
     .job-grid {
@@ -260,6 +260,7 @@
       
         width: 50%;
       }
+     
       .Backtosearch {
         padding: 10px 20px;
         background-color: white;
@@ -274,9 +275,51 @@
         justify-content: center;
     
       }
+      .parentcard{
+          margin-left: 0px !important;
+          grid-row: 1;
+          flex: 1;
+          flex-direction: column;
+          gap: 0px !important;
+          margin-top: 10px;
+          align-items: flex-start;
+          align-items: start !important;
+      }
+      .parentfont{
+        font-size: 10px !important;
+      }
+      .companylogo{
+        width: 40px !important;
+        height: 40px !important;
+      }
+      .companyname{
+        margin-left: 10px !important;
+      }
+      .job-actions a {
+        font-size: 10px !important;
+      }
+      .read-more-btn{
+        font-size: 10px;
+      }
+      .jobtitle{
+        font-size: 15px !important;
+      }
+      .savelogo{
+        width: 25px !important;
+        height: 17px !important;
+        margin-right: 10px;
+        margin-top: -6px;
+      }
+  
   }
-  
-  
+  .companylogo{
+    width: 56px;
+    height: 56px;
+    margin-right: 10px;
+  }
+  .jobtitle{
+   justify-content: center;
+  }
   .options {
     display: flex;
     flex-direction: column;

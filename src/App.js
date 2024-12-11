@@ -13,10 +13,12 @@ import Searchagain from './pages/components/searchresults/searchagain';
 import SavedJobs from './pages/components/searchresults/save';
 import Login from './pages/components/auth/login/login';
 import Signup from './pages/components/auth/signup/Signup';
+
 import User from './pages/components/userprofile/profile';
 import Demo from './demo/demo';
 import SavedRecommendations from './pages/components/searchresults/neww';
 import JobResultsdemo from './pages/components/searchresults/demoresults/demores';
+import JobSearch from './pages/components/testfolder/test';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
        
     <Route path='/' element={<Home/>}/>
     <Route path='search' element={<Search/>}/>
+    {/* <Route path='/' element={<JobSearch/>}/> */}
+
 
     <Route path='news' element={<News/>}/>
     {/* <Route path='jobresults' element={<JobResults/>}/> */}
