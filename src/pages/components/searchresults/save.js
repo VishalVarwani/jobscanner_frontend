@@ -61,7 +61,7 @@ export default function SavedJobs() {
                     <strong>Location:</strong> {job.JobLocation}
                   </p>
                   <p><strong>Source:</strong> {job.Source}</p>
-                  <div className="button-row mt-auto">
+                  <div className="button-row ">
                     <Link
                       to={job.JobLink}
                       target='_blank'

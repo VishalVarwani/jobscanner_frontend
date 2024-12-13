@@ -19,16 +19,18 @@
 }
 
 .apply-link {
-  display: inline-block;
-  background-color: #0073b1;
+  display: inline-block !important;
+  background-color: #0073b1 !important;
   color: white;
   font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-right: 10px;
+  margin-right: 10px !important;
+  position: relative !important;
+  margin-top: 0% !important;
 }
 
 .apply-link:hover {

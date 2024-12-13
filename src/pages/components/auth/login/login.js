@@ -69,7 +69,7 @@
         </div>
         <div className='line'>
           <div className='text-centerauth'>
-            <Link to = '/' className='Ortext options'>Guest user</Link>
+            <Link style={{background:"#148ecb"}} to = '/' className='Ortext options'>Guest user</Link>
           </div>
         </div>
         {/* <div className='orelseimg'>

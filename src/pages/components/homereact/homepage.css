@@ -77,14 +77,22 @@
     }
 
     .banner-text-left, .banner-text-right {
-      font-size: 12px !important; /* Reduce font size for smaller screens */
+      font-size: 15px !important; /* Reduce font size for smaller screens */
       text-align: center; /* Center-align text on mobile */
       white-space: normal; /* Allow text to wrap on smaller screens */
       animation: none; /* Optionally disable the animation on very small screens */
     }
+    .abouttitle{
+  text-align: center;
+  padding: 10px;
+  font-size: 20.688px;
+  line-height: none;
+  letter-spacing: 0px;
+  color: #ffffff;
+  font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif
+}
 
-   
-    
+
   }
 
   /* For extra small screens (phones) */
