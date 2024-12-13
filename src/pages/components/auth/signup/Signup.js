@@ -66,19 +66,11 @@ const Signup = () => {
           <Link to="/Login" style={{ textDecoration: "none", color: "#148ecb" }}>Login</Link>
         </span>
       </div>
-      <div className='line-container'>
-        <div className='text-centerauth'>
-          <span className='Ortext'>Or sign up with</span>
-        </div>
-      </div>
-      <div className='orelseimg'>
-        <Link className='social-icon'>
-          <img className='logo google' src={googlelogo} alt='sign in with google' />
-        </Link>
-        <Link className='social-icon'>
-          <img className='logo linkedin' src={linkedinlogo} alt='sign in with linkedin' />
-        </Link>
-      </div>
+     <div className='line'>
+               <div className='text-centerauth'>
+                 <Link to = '/' className='Ortext options'>Guest user</Link>
+               </div>
+             </div>
     </div>
   )
 }

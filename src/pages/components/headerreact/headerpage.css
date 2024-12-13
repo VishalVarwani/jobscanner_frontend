@@ -1,8 +1,11 @@
 header {
 
-    background-color: rgb(17 17 17);
+    /* background-color: rgb(17 17 17); */
     position: relative; /* Ensure positioning for the animation */
     animation: slideDown 0.5s ease forwards; /* Apply the animation */
+    background-color: var(--primary-color);
+
+    
   }
   
 

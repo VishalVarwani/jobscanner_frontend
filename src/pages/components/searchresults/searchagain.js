@@ -103,7 +103,10 @@
 
     return (
         <div style={{height:"30vh"}}className='ParentHome'>
-                    <ParticlesComponent/>
+          
+        <div className="ParticlesWrapper">
+        <ParticlesComponent/>
+                </div>
 
         <div className='Searchforjobssection'>
             

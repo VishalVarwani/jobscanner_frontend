@@ -140,28 +140,7 @@
 /* Dynamic typing effect for span */
 
 
-/* Typing animation */
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    50% {
-        width: 120%;
-    }
-    100% {
-        width: 0;
-    }
-}
 
-@keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: white;
-    }
-  }
 
   @media (max-width: 768px) {
     .ParentHome {

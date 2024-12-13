@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../headerreact/headerpage';
 import "./save.css";
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../../../Urls';
 export default function SavedJobs() {
   const [savedJobs, setSavedJobs] = useState([]);
   const loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
@@ -10,7 +11,7 @@ export default function SavedJobs() {
   useEffect(() => {
     const fetchSavedJobs = async () => {
       try {
-        const response = await axios.post("http://localhost:8000/get-saved-jobs", {
+        const response = await axios.post(`${baseUrl}/get-saved-jobs`, {
           email: loggedInUserEmail
         });
         if (response.data.savedJobs) {
@@ -28,7 +29,7 @@ export default function SavedJobs() {
     const jobToDelete = savedJobs[index];
 
     try {
-      await axios.post("http://localhost:8000/delete-saved-job", {
+      await axios.post(`${baseUrl}/delete-saved-job`, {
         email: loggedInUserEmail,
         jobLink: jobToDelete.JobLink
       });

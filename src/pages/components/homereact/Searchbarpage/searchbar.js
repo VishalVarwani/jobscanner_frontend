@@ -145,13 +145,13 @@ import { scrapingURL } from '../../../../Urls';
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     />
-                    <select className="Positionsinput">
+                    {/* <select className="Positionsinput">
                     <option>All Positions</option>
                     <option>Work Student</option>
                     <option>Full-time</option>
                     <option>Part-time</option>
                     </select>
-                    <button type="button" className="more-filters">More Filters</button>
+                    <button type="button" className="more-filters">More Filters</button> */}
 
                     <button type="submit" className="Searchbutton" disabled={loading}>
                     {loading ? 'Searching...' : 'Search'}

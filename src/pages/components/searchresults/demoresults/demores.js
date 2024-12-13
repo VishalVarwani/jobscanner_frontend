@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import "./demo.css"
+import goback from "../../../images/goback.png"
 import Searchagain from '../searchagain';
 import locationimg from "../../../images/location.png";
 import clockimg from "../../../images/clock.png";
@@ -15,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from '../../headerreact/headerpage';
+import Search from '../../homereact/Searchbarpage/searchbar';
 
 export default function JobResultsdemo() {
 const location = useLocation();
@@ -108,9 +110,10 @@ return (
       Job has been saved successfully!
     </Alert>
   )}
-    <Searchagain />
+    {/* <Searchagain />
+    <Search/> */}
     <div  className='page-container'>
-        <div style={{marginLeft:"10px"}} className='sidebar'>
+        {/* <div style={{marginLeft:"10px"}} className='sidebar'>
         <h3>Filters</h3>
         <div className='filter-option'>
             <label htmlFor='jobType'>Job Type</label>
@@ -139,9 +142,13 @@ return (
             </select>
         </div>
         <button className='apply-filters'>Apply Filters</button>
-        </div>
+        </div> */}
 
         <div className='main-content'>
+        <Link to='/' style={{display:"flex", alignContent:"flex-start"}}>
+        <img src={goback} />
+        </Link>
+
         <div style={{gap:"25px"}} className="d-flex justify-content-center flex-wrap mb-3">
             {['indeed', 'linkedin', 'stepstone', 'glassdoor', 'both'].map((platform) => (
               <button style={{gap:"25px"}}
