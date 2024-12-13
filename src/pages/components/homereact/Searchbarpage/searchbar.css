@@ -232,7 +232,7 @@
         }
     
         .dynamic-typing {
-        max-width: 70%; /* Ensure the typing animation doesn't overflow */
+        max-width: 80%; /* Ensure the typing animation doesn't overflow */
         font-size: 10px; /* Adjust font size */
         padding: 10px;
         }
