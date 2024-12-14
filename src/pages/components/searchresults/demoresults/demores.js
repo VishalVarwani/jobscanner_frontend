@@ -145,10 +145,7 @@ return (
         </div> */}
 
         <div className='main-content'>
-        <Link to='/' style={{display:"flex", alignContent:"flex-start"}}>
-        <img src={goback} />
-        </Link>
-
+       
         <div style={{gap:"25px"}} className="d-flex justify-content-center flex-wrap mb-3">
             {['indeed', 'linkedin', 'stepstone', 'glassdoor', 'both'].map((platform) => (
               <button style={{gap:"25px"}}

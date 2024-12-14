@@ -26,19 +26,19 @@ import { scrapingURL } from '../../../../Urls';
             try {
                 // Send requests to all 4 endpoints
                 await Promise.all([
-                    axios.post(`${scrapingURL}/api/indeed/fetch-jobs`, {
+                    axios.post(`https://indeed-lkt5.onrender.com/fetch-jobs`, {
                         job_title: jobTitle,
                         location: location,
                     }),
-                    axios.post(`${scrapingURL}/api/linkedin/fetch-jobs`, {
+                    axios.post(`https://linkedin-9yxh.onrender.com/fetch-jobs`, {
                         job_title: jobTitle,
                         location: location,
                     }),
-                    axios.post(`${scrapingURL}/api/stepstone/fetch-jobs`, {
+                    axios.post(`https://stepstone.onrender.com/fetch-jobs`, {
                         job_title: jobTitle,
                         location: location,
                     }),
-                    axios.post(`${scrapingURL}/api/glassdoor/fetch-jobs`, {
+                    axios.post(`https://glassdoor-9xiz.onrender.com/fetch-jobs`, {
                         job_title: jobTitle,
                         location: location,
                     }),
@@ -56,10 +56,10 @@ import { scrapingURL } from '../../../../Urls';
         const fetchJobs = async () => {
             try {
             const [indeedResponse, linkedinResponse, stepstoneResponse, glassdoorResponse] = await Promise.all([
-                axios.get(`${scrapingURL}/api/indeed/indeed-jobs`),
-                axios.get(`${scrapingURL}/api/linkedin/get-jobs`),
-                axios.get(`${scrapingURL}/api/stepstone/stepstone-jobs`),
-                axios.get(`${scrapingURL}/api/glassdoor/glassdoor-jobs`),
+                axios.get(`https://indeed-lkt5.onrender.com/indeed-get-jobs`),
+                axios.get(`https://linkedin-9yxh.onrender.com/get-jobs`),
+                axios.get(`https://stepstone.onrender.com/stepstone-get-jobs`),
+                axios.get(`https://glassdoor-9xiz.onrender.com/glassdoor-get-jobs`),
             ]);
 
             const mergedJobs = [
