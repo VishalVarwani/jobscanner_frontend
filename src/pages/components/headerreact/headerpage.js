@@ -55,7 +55,7 @@ const Header = () => {
                 <Link style={{color:"white", fontSize:"14px",fontWeight:"400" }} className="nav-link" to="/">Home Page</Link>
               </li>
               <li className="nav-item">
-                <Link style={{color:"white", fontSize:"14px",fontWeight:"400"}} className="nav-link" to="/about">About Us</Link>
+                <Link style={{color:"white", fontSize:"14px",fontWeight:"400"}} className="nav-link" to="/">About Us</Link>
               </li>
               {username && (
                 <li className="nav-item accountinfo">
